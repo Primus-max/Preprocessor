@@ -5,8 +5,10 @@
 
 using namespace std;
 
-#pragma region FillArray
-void fillIntArray(int* arr, int size) {
+
+
+#pragma region Заполнение массива
+void fillArray_Int(int* arr, int size) {
 	srand(time(NULL));
 
 	for (int i = 0; i < size; ++i) {
@@ -14,7 +16,7 @@ void fillIntArray(int* arr, int size) {
 	}
 }
 
-void fillDoubleArray(double* arr, int size) {
+void fillArray_Double(double* arr, int size) {
 	srand(time(NULL));
 
 	for (int i = 0; i < size; ++i) {
@@ -22,7 +24,7 @@ void fillDoubleArray(double* arr, int size) {
 	}
 }
 
-void fillCharArray(char* arr, int size) {
+void fillArray_Char(char* arr, int size) {
 	srand(time(NULL));
 
 	for (int i = 0; i < size; ++i) {
@@ -31,22 +33,22 @@ void fillCharArray(char* arr, int size) {
 }
 #pragma endregion
 
-#pragma region PrintArray
-void printIntArray(int* arr, int size) {
+#pragma region Печать массива
+void printArray_Int(int* arr, int size) {
 	for (int i = 0; i < size; ++i) {
 		cout << arr[i] << " ";
 	}
 	cout << endl;
 }
 
-void printDoubleArray(double* arr, int size) {
+void printArray_Double(double* arr, int size) {
 	for (int i = 0; i < size; ++i) {
 		cout << arr[i] << " ";
 	}
 	cout << endl;
 }
 
-void printCharArray(char* arr, int size) {
+void printArray_Char(char* arr, int size) {
 	for (int i = 0; i < size; ++i) {
 		cout << arr[i] << " ";
 	}
@@ -54,8 +56,8 @@ void printCharArray(char* arr, int size) {
 }
 #pragma endregion
 
-#pragma region FindMinimal
-int findIntMinimal(int* arr, int size) {
+#pragma region Поиск минимального
+int findMinimal_Int(int* arr, int size) {
 	int minimal = arr[0];
 
 	for (size_t i = 0; i < size; i++)
@@ -65,7 +67,7 @@ int findIntMinimal(int* arr, int size) {
 	return minimal;
 }
 
-double findDoubleMinimal(double* arr, int size) {
+double findMinimal_Double(double* arr, int size) {
 	double minimal = arr[0];
 
 	for (int i = 0; i < size; ++i)
@@ -75,13 +77,112 @@ double findDoubleMinimal(double* arr, int size) {
 	return minimal;
 }
 
-char findCharMinimal(char* arr, int size) {
+char findMinimal_Char(char* arr, int size) {
 	char minimal = arr[0];
 	for (int i = 1; i < size; ++i)
 		if (arr[i] < minimal)
 			minimal = arr[i];
 
 	return minimal;
+}
+
+#pragma endregion
+
+#pragma region Поиск максимального
+int findMaximum_Int(int* arr, int size) {
+	int maximum = arr[0];
+	for (int i = 1; i < size; ++i) 
+		if (arr[i] > maximum) 
+			maximum = arr[i];		
+	
+	return maximum;
+}
+
+double findMaximum_Double(double* arr, int size) {
+	double maximum = arr[0];
+	for (int i = 1; i < size; ++i) 
+		if (arr[i] > maximum) 
+			maximum = arr[i];		
+	
+	return maximum;
+}
+
+char findMaximum_Char(char* arr, int size) {
+	char maximum = arr[0];
+	for (int i = 1; i < size; ++i) 
+		if (arr[i] > maximum) 
+			maximum = arr[i];		
+	
+	return maximum;
+}
+#pragma endregion
+
+#pragma region Сортировка
+void sortArray_Int(int* arr, int size) {
+	for (int i = 0; i < size - 1; ++i) {
+		for (int j = 0; j < size - i - 1; ++j) {
+			if (arr[j] > arr[j + 1]) {
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+}
+
+void sortArray_Double(double* arr, int size) {
+	for (int i = 0; i < size - 1; ++i) {
+		for (int j = 0; j < size - i - 1; ++j) {
+			if (arr[j] > arr[j + 1]) {
+				double temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+}
+
+void sortArray_Char(char* arr, int size) {
+	for (int i = 0; i < size - 1; ++i) {
+		for (int j = 0; j < size - i - 1; ++j) {
+			if (arr[j] > arr[j + 1]) {
+				char temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+}
+#pragma endregion
+
+#pragma region Редактирование элемента
+void editElementToArray_Int(int* arr, int& size, int position, int element) {
+	if (position >= 0 && position < size) {
+		arr[position] = element;
+	}
+	else {
+		cout << "Ошибка: попытка редактирования элемента вне диапазона массива." << endl;
+	}
+}
+
+// Функция для редактирования элемента массива чисел с плавающей запятой
+void editElementToArray_Double(double* arr, int& size, int position, double element) {
+	if (position >= 0 && position < size) {
+		arr[position] = element;
+	}
+	else {
+		cout << "Ошибка: попытка редактирования элемента вне диапазона массива." << endl;
+	}
+}
+
+// Функция для редактирования элемента массива символов
+void editElementToArray_Char(char* arr, int& size, int position, char element) {
+	if (position >= 0 && position < size) {
+		arr[position] = element;
+	}
+	else {
+		cout << "Ошибка: попытка редактирования элемента вне диапазона массива." << endl;
+	}
 }
 
 #pragma endregion
