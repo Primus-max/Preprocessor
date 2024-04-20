@@ -13,9 +13,9 @@ void printCharArray(char* arr, int size);
 #pragma endregion
 
 #pragma region FindMinimal
-void findIntMinimal(int* arr, int size);
-void findDoubleMinimal(double* arr, int size);
-void findCharMinimal(char* arr, int size);
+int findIntMinimal(int* arr, int size);
+double findDoubleMinimal(double* arr, int size);
+char findCharMinimal(char* arr, int size);
 #pragma endregion
 
 #pragma region FindMaximus
