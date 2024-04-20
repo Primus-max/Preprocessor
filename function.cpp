@@ -5,8 +5,6 @@
 
 using namespace std;
 
-
-
 #pragma region Заполнение массива
 void fillArray_Int(int* arr, int size) {
 	srand(time(NULL));
@@ -156,7 +154,7 @@ void sortArray_Char(char* arr, int size) {
 #pragma endregion
 
 #pragma region Редактирование элемента
-void editElementToArray_Int(int* arr, int& size, int position, int element) {
+void editElementToArray_Int(int* arr, int size, int position, int element) {
 	if (position >= 0 && position < size) {
 		arr[position] = element;
 	}
@@ -166,7 +164,7 @@ void editElementToArray_Int(int* arr, int& size, int position, int element) {
 }
 
 // Функция для редактирования элемента массива чисел с плавающей запятой
-void editElementToArray_Double(double* arr, int& size, int position, double element) {
+void editElementToArray_Double(double* arr, int size, int position, double element) {
 	if (position >= 0 && position < size) {
 		arr[position] = element;
 	}
@@ -176,7 +174,7 @@ void editElementToArray_Double(double* arr, int& size, int position, double elem
 }
 
 // Функция для редактирования элемента массива символов
-void editElementToArray_Char(char* arr, int& size, int position, char element) {
+void editElementToArray_Char(char* arr, int size, int position, char element) {
 	if (position >= 0 && position < size) {
 		arr[position] = element;
 	}
